@@ -1,0 +1,94 @@
+{
+  "nav": {
+    "about": "概要",
+    "projects": "プロジェクト",
+    "services": "サービス",
+    "contact": "お問い合わせ"
+  },
+  "hero": {
+    "greeting": "こんにちは、",
+    "name": "キム・ミョンソプ",
+    "title": "フルスタック AI デベロッパー",
+    "subtitle": "AIを活用した開発で、通常の3〜5倍のスピードで本番品質のWeb・モバイルアプリを構築しています。",
+    "cta": "お仕事のご相談",
+    "scroll": "スクロールして詳細を見る"
+  },
+  "about": {
+    "label": "概要",
+    "heading": "ソウルから東京へ、デジタルプロダクトを構築",
+    "p1": "B2B AI & プロダクトスタジオ「MOVA Tech」の代表として、企画からローンチまでエンドツーエンドのソリューションを提供しています。品質を犠牲にすることなく、迅速な納品を専門としています。",
+    "p2": "韓国語、日本語、英語に対応し、韓国と日本市場の架け橋となります。実際のプロダクトの構築・リリース経験を活かし、技術力とビジネス理解の両方をプロジェクトに提供します。",
+    "stats": {
+      "speed": { "value": "3〜5倍", "label": "高速開発" },
+      "languages": { "value": "3", "label": "対応言語" },
+      "delivery": { "value": "E2E", "label": "エンドツーエンド" }
+    }
+  },
+  "techStack": {
+    "label": "技術スタック",
+    "heading": "使用技術"
+  },
+  "projects": {
+    "label": "プロジェクト",
+    "heading": "主な実績",
+    "items": {
+      "musubee": {
+        "title": "musubee",
+        "subtitle": "日本市場向けモバイルアプリ",
+        "description": "Flutter + Supabase + Firebaseで構築したiOS/Androidアプリ。日本企業との共同開発、企画からApp Storeリリースまで担当。",
+        "tags": ["Flutter", "Supabase", "Firebase", "iOS", "Android"]
+      },
+      "movatech": {
+        "title": "MOVA Tech",
+        "subtitle": "コーポレートサイト",
+        "description": "3ヶ国語対応（KR/JP/EN）のB2Bスタジオサイト。Next.js + Tailwind CSSで構築、Cloudflareにデプロイ。",
+        "link": "https://www.movatech.org/ja",
+        "tags": ["Next.js", "Tailwind CSS", "Cloudflare", "i18n"]
+      },
+      "lohas": {
+        "title": "LOHAS Resorts",
+        "subtitle": "リゾート管理ダッシュボード",
+        "description": "日本企業との共同開発。管理画面のバックエンド、ロジック設計、権限管理を担当。",
+        "link": "https://www.lohas-resorts.com/welcome/ja/resorts",
+        "tags": ["フルスタック", "管理画面", "権限管理"]
+      }
+    }
+  },
+  "services": {
+    "label": "サービス",
+    "heading": "提供サービス",
+    "items": {
+      "webapp": {
+        "title": "Webアプリケーション",
+        "description": "Next.js、React、Node.jsを使用したフルスタックSaaS MVP、ダッシュボード、社内ツールの構築。",
+        "timeline": "1〜3週間"
+      },
+      "mobile": {
+        "title": "モバイルアプリ",
+        "description": "Flutterを使用したiOS/Androidクロスプラットフォームアプリ。プロトタイプからApp Storeリリースまで。",
+        "timeline": "2〜6週間"
+      },
+      "ai": {
+        "title": "AIソリューション",
+        "description": "Claude APIやGPTを活用したカスタムチャットボット、AIエージェント、RAGシステム、自動化パイプライン。",
+        "timeline": "3〜7日"
+      },
+      "landing": {
+        "title": "ランディングページ",
+        "description": "コンバージョン重視のレスポンシブなランディングページを迅速に納品。スタートアップやプロダクトローンチに最適。",
+        "timeline": "48時間"
+      }
+    }
+  },
+  "contact": {
+    "label": "お問い合わせ",
+    "heading": "一緒にプロダクトを作りましょう",
+    "description": "プロジェクトのアイデアがありましたら、ぜひお聞かせください。お気軽にご連絡ください。",
+    "email": "お問い合わせ",
+    "portfolio": "MOVA Tech を見る"
+  },
+  "footer": {
+    "tagline": "Momentum of Value — 価値を動かす技術を作ります。",
+    "rights": "All rights reserved."
+  }
+}

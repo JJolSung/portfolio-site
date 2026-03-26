@@ -1,0 +1,94 @@
+{
+  "nav": {
+    "about": "About",
+    "projects": "Projects",
+    "services": "Services",
+    "contact": "Contact"
+  },
+  "hero": {
+    "greeting": "Hi, I'm",
+    "name": "MyeongSub Kim",
+    "title": "Full-Stack AI Developer",
+    "subtitle": "I build production-ready web & mobile applications at 3–5× the usual speed using AI-assisted development.",
+    "cta": "Let's work together",
+    "scroll": "Scroll to explore"
+  },
+  "about": {
+    "label": "About",
+    "heading": "Building digital products from Seoul to Tokyo",
+    "p1": "As the founder of MOVA Tech — a B2B AI & Product Studio — I deliver end-to-end solutions from discovery to launch. I specialize in rapid delivery without compromising quality.",
+    "p2": "Fluent in Korean, Japanese, and English, I bridge the gap between Korean and Japanese markets. With experience building and shipping real products, I bring both technical depth and business understanding to every project.",
+    "stats": {
+      "speed": { "value": "3–5×", "label": "Faster Development" },
+      "languages": { "value": "3", "label": "Languages Spoken" },
+      "delivery": { "value": "E2E", "label": "End-to-End" }
+    }
+  },
+  "techStack": {
+    "label": "Tech Stack",
+    "heading": "Technologies I work with"
+  },
+  "projects": {
+    "label": "Projects",
+    "heading": "Selected work",
+    "items": {
+      "musubee": {
+        "title": "musubee",
+        "subtitle": "Japanese Market Mobile App",
+        "description": "Full-cycle iOS/Android app built with Flutter + Supabase + Firebase. Co-developed with a Japanese partner company, from planning to App Store launch.",
+        "tags": ["Flutter", "Supabase", "Firebase", "iOS", "Android"]
+      },
+      "movatech": {
+        "title": "MOVA Tech",
+        "subtitle": "Corporate Website",
+        "description": "Trilingual (KR/JP/EN) B2B studio website built with Next.js + Tailwind CSS, deployed on Cloudflare.",
+        "link": "https://www.movatech.org",
+        "tags": ["Next.js", "Tailwind CSS", "Cloudflare", "i18n"]
+      },
+      "lohas": {
+        "title": "LOHAS Resorts",
+        "subtitle": "Resort Admin Dashboard",
+        "description": "Co-developed with a Japanese company. Responsible for backend, logic design, and role-based access control for the admin dashboard.",
+        "link": "https://www.lohas-resorts.com/welcome/ja/resorts",
+        "tags": ["Full-Stack", "Admin Dashboard", "RBAC"]
+      }
+    }
+  },
+  "services": {
+    "label": "Services",
+    "heading": "What I deliver",
+    "items": {
+      "webapp": {
+        "title": "Web Applications",
+        "description": "Full-stack SaaS MVPs, dashboards, and internal tools built with Next.js, React, and Node.js.",
+        "timeline": "1–3 weeks"
+      },
+      "mobile": {
+        "title": "Mobile Apps",
+        "description": "Cross-platform iOS/Android applications built with Flutter. From prototype to App Store launch.",
+        "timeline": "2–6 weeks"
+      },
+      "ai": {
+        "title": "AI Solutions",
+        "description": "Custom chatbots, AI agents, RAG systems, and automation pipelines using Claude API and GPT.",
+        "timeline": "3–7 days"
+      },
+      "landing": {
+        "title": "Landing Pages",
+        "description": "High-converting, responsive landing pages delivered fast. Perfect for startups and product launches.",
+        "timeline": "48 hours"
+      }
+    }
+  },
+  "contact": {
+    "label": "Contact",
+    "heading": "Let's build something together",
+    "description": "Have a project in mind? I'd love to hear about it. Reach out and let's discuss how I can help.",
+    "email": "Get in touch",
+    "portfolio": "View MOVA Tech"
+  },
+  "footer": {
+    "tagline": "Momentum of Value — Building technology that moves value forward.",
+    "rights": "All rights reserved."
+  }
+}
