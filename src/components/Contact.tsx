@@ -1,4 +1,4 @@
-export default function Contact({ dict }: { dict: any }) {
+export default function Contact({ dict, locale }: { dict: any; locale: string }) {
   return (
     <section id="contact" className="py-32 relative">
       <div className="gradient-line mb-32" />
@@ -18,7 +18,7 @@ export default function Contact({ dict }: { dict: any }) {
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <a
-              href="https://www.movatech.org/contact"
+              href={`https://www.movatech.org/${locale}/contact`}
               target="_blank"
               rel="noopener noreferrer"
               className="group inline-flex items-center gap-2 px-8 py-3.5 bg-accent text-surface font-medium rounded-lg hover:bg-accent-dim transition-all hover:scale-[1.02] active:scale-[0.98]"
@@ -39,7 +39,7 @@ export default function Contact({ dict }: { dict: any }) {
               </svg>
             </a>
             <a
-              href="https://www.movatech.org"
+              href={`https://www.movatech.org/${locale}`}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 px-8 py-3.5 border border-white/10 text-white rounded-lg hover:border-white/30 hover:bg-white/5 transition-all"
@@ -62,7 +62,7 @@ export default function Contact({ dict }: { dict: any }) {
               </svg>
             </a>
             <a
-              href="https://www.movatech.org"
+              href={`https://www.movatech.org/${locale}`}
               target="_blank"
               rel="noopener noreferrer"
               className="text-muted hover:text-white transition-colors"

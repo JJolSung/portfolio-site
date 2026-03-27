@@ -42,7 +42,7 @@
         "title": "MOVA Tech",
         "subtitle": "Corporate Website",
         "description": "Trilingual (KR/JP/EN) B2B studio website built with Next.js + Tailwind CSS, deployed on Cloudflare.",
-        "link": "https://www.movatech.org",
+        "link": "https://www.movatech.org/en",
         "tags": ["Next.js", "Tailwind CSS", "Cloudflare", "i18n"]
       },
       "lohas": {

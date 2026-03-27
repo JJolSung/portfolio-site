@@ -1,10 +1,10 @@
-import { Locale, getDictionary } from "@/i18n/config";
-import Hero from "@/components/Hero";
-import About from "@/components/About";
-import TechStack from "@/components/TechStack";
-import Projects from "@/components/Projects";
-import Services from "@/components/Services";
-import Contact from "@/components/Contact";
+import { Locale, getDictionary } from '@/i18n/config';
+import Hero from '@/components/Hero';
+import About from '@/components/About';
+import TechStack from '@/components/TechStack';
+import Projects from '@/components/Projects';
+import Services from '@/components/Services';
+import Contact from '@/components/Contact';
 
 export default async function HomePage({
   params,
@@ -15,12 +15,12 @@ export default async function HomePage({
 
   return (
     <>
-      <Hero dict={dict} />
+      <Hero dict={dict} locale={params.locale} />
       <About dict={dict} />
       <TechStack dict={dict} />
       <Projects dict={dict} />
       <Services dict={dict} />
-      <Contact dict={dict} />
+      <Contact dict={dict} locale={params.locale} />
     </>
   );
 }

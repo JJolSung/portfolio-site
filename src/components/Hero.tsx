@@ -1,4 +1,4 @@
-export default function Hero({ dict }: { dict: any }) {
+export default function Hero({ dict, locale }: { dict: any; locale: string }) {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background gradient */}
@@ -64,7 +64,7 @@ export default function Hero({ dict }: { dict: any }) {
             </svg>
           </a>
           <a
-            href="https://www.movatech.org"
+            href={`https://www.movatech.org/${locale}`}
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 px-8 py-3.5 border border-white/10 text-white rounded-lg hover:border-white/30 hover:bg-white/5 transition-all"
