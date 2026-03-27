@@ -3,7 +3,8 @@
     "about": "概要",
     "projects": "プロジェクト",
     "services": "サービス",
-    "contact": "お問い合わせ"
+    "contact": "お問い合わせ",
+    "showcase": "ショーケース"
   },
   "hero": {
     "greeting": "こんにちは、",
@@ -32,8 +33,8 @@
     "label": "プロジェクト",
     "heading": "主な実績",
     "items": {
-      "musubee": {
-        "title": "musubee",
+      "MUSUBEE": {
+        "title": "MUSUBEE",
         "subtitle": "日本市場向けモバイルアプリ",
         "description": "Flutter + Supabase + Firebaseで構築したiOS/Androidアプリ。日本企業との共同開発、企画からApp Storeリリースまで担当。",
         "tags": ["Flutter", "Supabase", "Firebase", "iOS", "Android"]
@@ -57,6 +58,8 @@
   "services": {
     "label": "サービス",
     "heading": "提供サービス",
+    "note": "ゼロからカスタム構築するフルオーダープロジェクトの目安期間です。",
+    "showcaseLink": "短納期をご希望の方は、完成済みのShowcaseをご覧ください。",
     "items": {
       "webapp": {
         "title": "Webアプリケーション",
@@ -90,5 +93,63 @@
   "footer": {
     "tagline": "Momentum of Value — 価値を動かす技術を作ります。",
     "rights": "All rights reserved."
+  },
+  "showcase": {
+    "meta": {
+      "title": "ショーケース — キム・ミョンソプ",
+      "description": "構築可能なプロダクションレベルのMVPをご覧ください。AIチャットボットからSaaSダッシュボードまで。"
+    },
+    "hero": {
+      "label": "ショーケース",
+      "heading": "構築可能なプロダクト",
+      "subtitle": "以下のプロジェクトはすべてプロダクションレベルのMVPです。\nベースとして選択するか、カスタム開発をご依頼ください。"
+    },
+    "labels": {
+      "price": "価格帯",
+      "buildTime": "制作期間",
+      "note": "構築済みMVP — カスタマイズ後すぐにデプロイ可能。ゼロから構築するより大幅に短縮。",
+      "demo": "ライブデモ",
+      "github": "ソースコード",
+      "cta": "ご興味がありましたらご連絡ください",
+      "ctaDescription": "ショーケースプロジェクトをベースに、またはカスタム要件をお聞かせください。"
+    },
+    "items": {
+      "ai-customer-chatbot": {
+        "title": "AIカスタマーチャットボット",
+        "type": "AIチャットボット (RAG)",
+        "description": "ベクトル検索によるRAGカスタマーサポートチャットボット。ドキュメントを理解し、正確で文脈に沿った回答を提供。必要に応じてエスカレーション。",
+        "tags": ["Next.js", "Groq API", "RAG", "Supabase pgvector", "Tailwind CSS"]
+      },
+      "landing-page-templates": {
+        "title": "ランディングページテンプレート",
+        "type": "ランディングページ",
+        "description": "高コンバージョンのレスポンシブランディングページ。スムーズなアニメーション、ダークモード、CMS連携対応。",
+        "tags": ["Next.js", "Tailwind CSS", "Framer Motion", "TypeScript"]
+      },
+      "business-dashboard": {
+        "title": "ビジネスダッシュボード",
+        "type": "SaaSダッシュボード",
+        "description": "リアルタイムチャート、ロールベースアクセス制御、カスタマイズ可能なウィジェットを備えた分析ダッシュボード。",
+        "tags": ["Next.js", "React", "Prisma", "PostgreSQL", "Chart.js"]
+      },
+      "workflow-automation": {
+        "title": "ワークフロー自動化",
+        "type": "AI自動化",
+        "description": "AIベースのワークフロー自動化。ツール連携、ドキュメント処理、繰り返し作業を自動化します。",
+        "tags": ["Python", "LangChain", "Claude API", "Webhooks", "Supabase"]
+      },
+      "saas-starter-kit": {
+        "title": "SaaSスターターキット",
+        "type": "SaaSボイラープレート",
+        "description": "認証、決済、チーム管理、管理パネル、APIを備えた完全なSaaS基盤。数ヶ月のボイラープレートをスキップ。",
+        "tags": ["Next.js", "Supabase", "Stripe", "Prisma", "TypeScript"]
+      },
+      "booking-management-app": {
+        "title": "予約管理アプリ",
+        "type": "モバイルアプリ",
+        "description": "カレンダー同期、プッシュ通知、決済連携を備えたクロスプラットフォーム予約管理モバイルアプリ。",
+        "tags": ["Flutter", "Dart", "Supabase", "Firebase", "Stripe"]
+      }
+    }
   }
 }

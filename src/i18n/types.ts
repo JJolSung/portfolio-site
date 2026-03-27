@@ -4,6 +4,7 @@ export interface Dictionary {
     projects: string;
     services: string;
     contact: string;
+    showcase: string;
   };
   hero: {
     greeting: string;
@@ -45,6 +46,8 @@ export interface Dictionary {
   services: {
     label: string;
     heading: string;
+    note: string;
+    showcaseLink: string;
     items: Record<
       string,
       {
@@ -64,5 +67,34 @@ export interface Dictionary {
   footer: {
     tagline: string;
     rights: string;
+  };
+  showcase: {
+    meta: {
+      title: string;
+      description: string;
+    };
+    hero: {
+      label: string;
+      heading: string;
+      subtitle: string;
+    };
+    labels: {
+      price: string;
+      buildTime: string;
+      note: string;
+      demo: string;
+      github: string;
+      cta: string;
+      ctaDescription: string;
+    };
+    items: Record<
+      string,
+      {
+        title: string;
+        type: string;
+        description: string;
+        tags: string[];
+      }
+    >;
   };
 }

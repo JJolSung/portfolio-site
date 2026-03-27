@@ -5,9 +5,10 @@ const serviceIcons: Record<string, string> = {
   landing: "🚀",
 };
 
+import Link from "next/link";
 import type { Dictionary } from "@/i18n/types";
 
-export default function Services({ dict }: { dict: Dictionary }) {
+export default function Services({ dict, locale }: { dict: Dictionary; locale: string }) {
   const serviceKeys = ["webapp", "mobile", "ai", "landing"];
 
   return (
@@ -17,9 +18,18 @@ export default function Services({ dict }: { dict: Dictionary }) {
         <span className="reveal font-mono text-xs text-accent tracking-widest uppercase mb-4 block">
           {dict.services.label}
         </span>
-        <h2 className="reveal font-display text-3xl sm:text-4xl md:text-5xl font-bold text-white leading-tight mb-16 max-w-3xl">
+        <h2 className="reveal font-display text-3xl sm:text-4xl md:text-5xl font-bold text-white leading-tight mb-6 max-w-3xl">
           {dict.services.heading}
         </h2>
+        <div className="reveal text-sm text-muted mb-16 max-w-2xl space-y-1">
+          <p>{dict.services.note}</p>
+          <Link
+            href={`/${locale}/showcase`}
+            className="inline-block text-accent hover:text-accent-dim transition-colors underline underline-offset-4"
+          >
+            {dict.services.showcaseLink}
+          </Link>
+        </div>
 
         <div className="grid sm:grid-cols-2 gap-6">
           {serviceKeys.map((key, i) => {

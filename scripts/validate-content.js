@@ -84,6 +84,7 @@ const ALLOWED_DOMAINS = [
   "movatech.org",
   "lohas-resorts.com",
   "github.com",
+  "vercel.app",
 ];
 
 // ---------------------------------------------------------------------------
@@ -177,6 +178,41 @@ for (const file of componentFiles) {
   const match = content.match(blocklistRegex);
   if (match) {
     addViolation(filePath, "-", `Blocked word detected: "${match[0]}"`);
+  }
+}
+
+// --- Check showcase subdirectory ---
+const showcaseDir = path.join(componentsDir, "showcase");
+if (fs.existsSync(showcaseDir)) {
+  const showcaseFiles = fs.readdirSync(showcaseDir).filter((f) => f.endsWith(".tsx"));
+  for (const file of showcaseFiles) {
+    const filePath = path.join(showcaseDir, file);
+    const content = fs.readFileSync(filePath, "utf-8");
+    const match = content.match(blocklistRegex);
+    if (match) {
+      addViolation(filePath, "-", `Blocked word detected: "${match[0]}"`);
+    }
+  }
+}
+
+// --- Check data files ---
+const dataDir = path.join(ROOT, "src", "data");
+if (fs.existsSync(dataDir)) {
+  const dataFiles = fs.readdirSync(dataDir).filter((f) => f.endsWith(".ts"));
+  for (const file of dataFiles) {
+    const filePath = path.join(dataDir, file);
+    const content = fs.readFileSync(filePath, "utf-8");
+    const match = content.match(blocklistRegex);
+    if (match) {
+      addViolation(filePath, "-", `Blocked word detected: "${match[0]}"`);
+    }
+    const urls = content.match(/https?:\/\/[^\s"')]+/g) || [];
+    for (const url of urls) {
+      const isAllowed = ALLOWED_DOMAINS.some((d) => url.includes(d));
+      if (!isAllowed) {
+        addViolation(filePath, "-", `Unauthorized URL: ${url}`);
+      }
+    }
   }
 }
 

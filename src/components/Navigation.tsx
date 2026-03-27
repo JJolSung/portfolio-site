@@ -23,8 +23,10 @@ export default function Navigation({ dict, locale }: NavigationProps) {
   const [menuOpen, setMenuOpen] = useState(false);
 
   const switchLocale = (loc: Locale) => {
+    const pathname = window.location.pathname;
     const hash = window.location.hash;
-    router.push(`/${loc}${hash}`);
+    const newPath = pathname.replace(/^\/(en|ja|ko)/, `/${loc}`);
+    router.push(`${newPath}${hash}`);
   };
 
   useEffect(() => {
@@ -34,10 +36,10 @@ export default function Navigation({ dict, locale }: NavigationProps) {
   }, []);
 
   const navLinks = [
-    { href: "#about", label: dict.nav.about },
-    { href: "#projects", label: dict.nav.projects },
-    { href: "#services", label: dict.nav.services },
-    { href: "#contact", label: dict.nav.contact },
+    { href: `/${locale}#about`, label: dict.nav.about },
+    { href: `/${locale}#projects`, label: dict.nav.projects },
+    { href: `/${locale}#services`, label: dict.nav.services },
+    { href: `/${locale}#contact`, label: dict.nav.contact },
   ];
 
   return (
@@ -68,6 +70,14 @@ export default function Navigation({ dict, locale }: NavigationProps) {
               {link.label}
             </a>
           ))}
+
+          {/* Showcase Page Link */}
+          <Link
+            href={`/${locale}/showcase`}
+            className="text-sm text-accent hover:text-accent-dim transition-colors font-medium"
+          >
+            {dict.nav.showcase}
+          </Link>
 
           {/* Language Switcher */}
           <div className="flex items-center gap-1 ml-4 border-l border-white/10 pl-4">
@@ -125,6 +135,13 @@ export default function Navigation({ dict, locale }: NavigationProps) {
                 {link.label}
               </a>
             ))}
+            <Link
+              href={`/${locale}/showcase`}
+              onClick={() => setMenuOpen(false)}
+              className="text-accent hover:text-accent-dim transition-colors py-1 font-medium"
+            >
+              {dict.nav.showcase}
+            </Link>
             <div className="flex items-center gap-2 pt-4 border-t border-white/10">
               {locales.map((loc) => (
                 <button
