@@ -3,7 +3,8 @@
     "about": "소개",
     "projects": "프로젝트",
     "services": "서비스",
-    "contact": "문의"
+    "contact": "문의",
+    "showcase": "쇼케이스"
   },
   "hero": {
     "greeting": "안녕하세요,",
@@ -32,8 +33,8 @@
     "label": "프로젝트",
     "heading": "주요 프로젝트",
     "items": {
-      "musubee": {
-        "title": "musubee",
+      "MUSUBEE": {
+        "title": "MUSUBEE",
         "subtitle": "일본 시장 모바일 앱",
         "description": "Flutter + Supabase + Firebase로 구축한 iOS/Android 앱. 일본 기업과 공동 개발, 기획부터 앱스토어 출시까지 담당.",
         "tags": ["Flutter", "Supabase", "Firebase", "iOS", "Android"]
@@ -57,6 +58,8 @@
   "services": {
     "label": "서비스",
     "heading": "제공 서비스",
+    "note": "처음부터 맞춤 제작하는 풀 커스텀 프로젝트 기준 예상 일정입니다.",
+    "showcaseLink": "빠른 납품을 원하시면 완성된 Showcase를 확인해 보세요.",
     "items": {
       "webapp": {
         "title": "웹 애플리케이션",
@@ -90,5 +93,63 @@
   "footer": {
     "tagline": "Momentum of Value — 가치를 움직이는 기술을 만듭니다.",
     "rights": "All rights reserved."
+  },
+  "showcase": {
+    "meta": {
+      "title": "쇼케이스 — 김명섭",
+      "description": "제가 만들 수 있는 프로덕션 수준의 MVP를 확인하세요. AI 챗봇부터 SaaS 대시보드까지."
+    },
+    "hero": {
+      "label": "쇼케이스",
+      "heading": "만들 수 있는 프로덕트",
+      "subtitle": "아래 프로젝트는 모두 프로덕션 수준의 MVP입니다.\n원하는 프로젝트를 선택하거나, 맞춤 제작을 의뢰하세요."
+    },
+    "labels": {
+      "price": "예상 단가",
+      "buildTime": "제작 기간",
+      "note": "사전 제작된 MVP — 맞춤 수정 후 바로 배포 가능. 처음부터 만드는 것보다 훨씬 빠릅니다.",
+      "demo": "라이브 데모",
+      "github": "소스 코드",
+      "cta": "관심 있으신가요? 편하게 연락주세요",
+      "ctaDescription": "쇼케이스 프로젝트를 기반으로 시작하거나, 맞춤 요구사항을 알려주세요."
+    },
+    "items": {
+      "ai-customer-chatbot": {
+        "title": "AI 고객 챗봇",
+        "type": "AI 챗봇 (RAG)",
+        "description": "벡터 검색 기반 RAG 고객 지원 챗봇. 문서를 이해하고, 정확한 맥락의 답변을 제공하며, 필요시 에스컬레이션합니다.",
+        "tags": ["Next.js", "Groq API", "RAG", "Supabase pgvector", "Tailwind CSS"]
+      },
+      "landing-page-templates": {
+        "title": "랜딩페이지 템플릿",
+        "type": "랜딩페이지",
+        "description": "높은 전환율의 반응형 랜딩페이지 템플릿. 부드러운 애니메이션, 다크 모드, CMS 연동 지원.",
+        "tags": ["Next.js", "Tailwind CSS", "Framer Motion", "TypeScript"]
+      },
+      "business-dashboard": {
+        "title": "비즈니스 대시보드",
+        "type": "SaaS 대시보드",
+        "description": "실시간 차트, 역할 기반 접근 제어, 커스터마이징 가능한 위젯을 갖춘 풀스택 분석 대시보드.",
+        "tags": ["Next.js", "React", "Prisma", "PostgreSQL", "Chart.js"]
+      },
+      "workflow-automation": {
+        "title": "워크플로우 자동화",
+        "type": "AI 자동화",
+        "description": "AI 기반 워크플로우 자동화. 도구 연결, 문서 처리, 반복 작업을 자동으로 처리합니다.",
+        "tags": ["Python", "LangChain", "Claude API", "Webhooks", "Supabase"]
+      },
+      "saas-starter-kit": {
+        "title": "SaaS 스타터킷",
+        "type": "SaaS 보일러플레이트",
+        "description": "인증, 결제, 팀 관리, 어드민 패널, API를 갖춘 완전한 SaaS 기반. 수개월의 보일러플레이트를 건너뛰세요.",
+        "tags": ["Next.js", "Supabase", "Stripe", "Prisma", "TypeScript"]
+      },
+      "booking-management-app": {
+        "title": "예약 관리 앱",
+        "type": "모바일 앱",
+        "description": "캘린더 동기화, 푸시 알림, 결제 연동을 갖춘 크로스플랫폼 예약 관리 모바일 앱.",
+        "tags": ["Flutter", "Dart", "Supabase", "Firebase", "Stripe"]
+      }
+    }
   }
 }

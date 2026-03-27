@@ -19,7 +19,7 @@ export default async function HomePage({
       <About dict={dict} />
       <TechStack dict={dict} />
       <Projects dict={dict} />
-      <Services dict={dict} />
+      <Services dict={dict} locale={params.locale} />
       <Contact dict={dict} locale={params.locale} />
     </>
   );

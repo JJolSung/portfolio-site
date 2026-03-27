@@ -4,6 +4,7 @@ const config: Config = {
   content: [
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/data/**/*.ts",
   ],
   theme: {
     extend: {
@@ -32,6 +33,7 @@ const config: Config = {
         "fade-up": "fadeUp 0.6s ease-out forwards",
         "fade-in": "fadeIn 0.8s ease-out forwards",
         "slide-in": "slideIn 0.5s ease-out forwards",
+        shimmer: "shimmer 3s ease-in-out infinite",
       },
       keyframes: {
         fadeUp: {
@@ -45,6 +47,10 @@ const config: Config = {
         slideIn: {
           "0%": { opacity: "0", transform: "translateX(-16px)" },
           "100%": { opacity: "1", transform: "translateX(0)" },
+        },
+        shimmer: {
+          "0%": { backgroundPosition: "-200% 0" },
+          "100%": { backgroundPosition: "200% 0" },
         },
       },
     },
