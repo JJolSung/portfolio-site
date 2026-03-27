@@ -1,4 +1,6 @@
-export default function About({ dict }: { dict: any }) {
+import type { Dictionary } from "@/i18n/types";
+
+export default function About({ dict }: { dict: Dictionary }) {
   const stats = [
     dict.about.stats.speed,
     dict.about.stats.languages,
@@ -32,7 +34,7 @@ export default function About({ dict }: { dict: any }) {
 
           {/* Stats */}
           <div className="md:col-span-2 grid grid-cols-1 gap-6">
-            {stats.map((stat: any, i: number) => (
+            {stats.map((stat, i) => (
               <div
                 key={i}
                 className="reveal border border-white/5 bg-surface-raised rounded-xl p-6 hover:border-accent/20 transition-colors"

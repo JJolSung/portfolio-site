@@ -17,7 +17,9 @@ const techCategories = [
   },
 ];
 
-export default function TechStack({ dict }: { dict: any }) {
+import type { Dictionary } from "@/i18n/types";
+
+export default function TechStack({ dict }: { dict: Dictionary }) {
   return (
     <section className="py-32 relative">
       <div className="max-w-6xl mx-auto px-6">

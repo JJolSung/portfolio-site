@@ -1,4 +1,6 @@
-export default function Projects({ dict }: { dict: any }) {
+import type { Dictionary } from "@/i18n/types";
+
+export default function Projects({ dict }: { dict: Dictionary }) {
   const projects = [
     { key: "musubee", icon: "📱" },
     { key: "movatech", icon: "🌐" },

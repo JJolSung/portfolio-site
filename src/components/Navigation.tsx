@@ -2,10 +2,12 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { Locale, locales } from "@/i18n/config";
+import type { Dictionary } from "@/i18n/types";
 
 interface NavigationProps {
-  dict: any;
+  dict: Dictionary;
   locale: Locale;
 }
 
@@ -16,8 +18,14 @@ const localeLabels: Record<Locale, string> = {
 };
 
 export default function Navigation({ dict, locale }: NavigationProps) {
+  const router = useRouter();
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+
+  const switchLocale = (loc: Locale) => {
+    const hash = window.location.hash;
+    router.push(`/${loc}${hash}`);
+  };
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 40);
@@ -64,9 +72,9 @@ export default function Navigation({ dict, locale }: NavigationProps) {
           {/* Language Switcher */}
           <div className="flex items-center gap-1 ml-4 border-l border-white/10 pl-4">
             {locales.map((loc) => (
-              <Link
+              <button
                 key={loc}
-                href={`/${loc}`}
+                onClick={() => switchLocale(loc)}
                 className={`text-xs px-2 py-1 rounded transition-all ${
                   locale === loc
                     ? "bg-accent/20 text-accent font-medium"
@@ -74,7 +82,7 @@ export default function Navigation({ dict, locale }: NavigationProps) {
                 }`}
               >
                 {localeLabels[loc]}
-              </Link>
+              </button>
             ))}
           </div>
         </div>
@@ -119,9 +127,9 @@ export default function Navigation({ dict, locale }: NavigationProps) {
             ))}
             <div className="flex items-center gap-2 pt-4 border-t border-white/10">
               {locales.map((loc) => (
-                <Link
+                <button
                   key={loc}
-                  href={`/${loc}`}
+                  onClick={() => { switchLocale(loc); setMenuOpen(false); }}
                   className={`text-sm px-3 py-1.5 rounded transition-all ${
                     locale === loc
                       ? "bg-accent/20 text-accent font-medium"
@@ -129,7 +137,7 @@ export default function Navigation({ dict, locale }: NavigationProps) {
                   }`}
                 >
                   {localeLabels[loc]}
-                </Link>
+                </button>
               ))}
             </div>
           </div>

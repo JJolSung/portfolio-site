@@ -5,7 +5,9 @@ const serviceIcons: Record<string, string> = {
   landing: "🚀",
 };
 
-export default function Services({ dict }: { dict: any }) {
+import type { Dictionary } from "@/i18n/types";
+
+export default function Services({ dict }: { dict: Dictionary }) {
   const serviceKeys = ["webapp", "mobile", "ai", "landing"];
 
   return (

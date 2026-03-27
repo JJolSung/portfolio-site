@@ -1,9 +1,39 @@
-import { Metadata } from "next";
-import { locales, Locale } from "@/i18n/config";
-import { getDictionary } from "@/i18n/config";
-import Navigation from "@/components/Navigation";
-import Footer from "@/components/Footer";
-import ScrollReveal from "@/components/ScrollReveal";
+import { Metadata } from 'next';
+import { notFound } from 'next/navigation';
+import { Outfit, JetBrains_Mono, Noto_Sans_JP, Noto_Sans_KR } from 'next/font/google';
+import { locales, Locale } from '@/i18n/config';
+import { getDictionary } from '@/i18n/config';
+import Navigation from '@/components/Navigation';
+import Footer from '@/components/Footer';
+import ScrollReveal from '@/components/ScrollReveal';
+
+const outfit = Outfit({
+  subsets: ['latin'],
+  weight: ['300', '400', '500', '600', '700'],
+  variable: '--font-display',
+  display: 'swap',
+});
+
+const jetbrainsMono = JetBrains_Mono({
+  subsets: ['latin'],
+  weight: ['400', '500'],
+  variable: '--font-mono',
+  display: 'swap',
+});
+
+const notoSansJP = Noto_Sans_JP({
+  subsets: ['latin'],
+  weight: ['300', '400', '500', '600', '700'],
+  variable: '--font-noto-jp',
+  display: 'swap',
+});
+
+const notoSansKR = Noto_Sans_KR({
+  subsets: ['latin'],
+  weight: ['300', '400', '500', '600', '700'],
+  variable: '--font-noto-kr',
+  display: 'swap',
+});
 
 export async function generateStaticParams() {
   return locales.map((locale) => ({ locale }));
@@ -15,15 +45,15 @@ export async function generateMetadata({
   params: { locale: Locale };
 }): Promise<Metadata> {
   const titles: Record<Locale, string> = {
-    en: "MyeongSub Kim — Full-Stack AI Developer",
-    ja: "キム・ミョンソプ — フルスタック AI デベロッパー",
-    ko: "김명섭 — 풀스택 AI 개발자",
+    en: 'MyeongSub Kim — Full-Stack AI Developer',
+    ja: 'キム・ミョンソプ — フルスタック AI デベロッパー',
+    ko: '김명섭. — 풀스택 AI 개발자',
   };
 
   const descriptions: Record<Locale, string> = {
-    en: "Full-Stack AI Developer & Founder of MOVA Tech. Building production-ready web & mobile apps at 3-5x speed.",
-    ja: "フルスタックAIデベロッパー、MOVA Tech代表。通常の3〜5倍のスピードで本番品質のアプリを構築。",
-    ko: "풀스택 AI 개발자, MOVA Tech 대표. 3~5배 빠른 속도로 프로덕션 품질의 앱을 구축합니다.",
+    en: 'Full-Stack AI Developer & Founder of MOVA Tech Co.,Ltd. Building production-ready web & mobile apps at 3-5x speed.',
+    ja: 'フルスタックAIデベロッパー、MOVA Tech Co.,Ltd.代表。通常の3〜5倍のスピードで本番品質のアプリを構築。',
+    ko: '풀스택 AI 개발자, 주식회사 모바테크 대표. 3~5배 빠른 속도로 프로덕션 품질의 앱을 구축합니다.',
   };
 
   return {
@@ -32,7 +62,7 @@ export async function generateMetadata({
     openGraph: {
       title: titles[params.locale],
       description: descriptions[params.locale],
-      type: "website",
+      type: 'website',
     },
   };
 }
@@ -44,12 +74,16 @@ export default async function LocaleLayout({
   children: React.ReactNode;
   params: { locale: Locale };
 }) {
+  if (!locales.includes(params.locale as Locale)) {
+    notFound();
+  }
+
   const dict = await getDictionary(params.locale);
-  const langMap: Record<Locale, string> = { en: "en", ja: "ja", ko: "ko" };
+  const langMap: Record<Locale, string> = { en: 'en', ja: 'ja', ko: 'ko' };
 
   return (
-    <html lang={langMap[params.locale]} className="dark">
-      <body className="noise">
+    <html lang={langMap[params.locale]} className={`${outfit.variable} ${jetbrainsMono.variable} ${notoSansJP.variable} ${notoSansKR.variable}`}>
+      <body className='noise'>
         <Navigation dict={dict} locale={params.locale} />
         <main>{children}</main>
         <Footer dict={dict} />

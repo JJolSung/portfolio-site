@@ -1,3 +1,5 @@
+import type { Dictionary } from "./types";
+
 export const locales = ["en", "ja", "ko"] as const;
 export type Locale = (typeof locales)[number];
 export const defaultLocale: Locale = "en";
@@ -8,6 +10,6 @@ const dictionaries = {
   ko: () => import("./ko.json").then((m) => m.default),
 };
 
-export const getDictionary = async (locale: Locale) => {
+export const getDictionary = async (locale: Locale): Promise<Dictionary> => {
   return dictionaries[locale]();
 };
