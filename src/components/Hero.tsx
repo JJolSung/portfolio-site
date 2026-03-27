@@ -1,4 +1,6 @@
-export default function Hero({ dict, locale }: { dict: any; locale: string }) {
+import type { Dictionary } from "@/i18n/types";
+
+export default function Hero({ dict, locale }: { dict: Dictionary; locale: string }) {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background gradient */}

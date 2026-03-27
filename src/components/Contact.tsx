@@ -1,4 +1,6 @@
-export default function Contact({ dict, locale }: { dict: any; locale: string }) {
+import type { Dictionary } from "@/i18n/types";
+
+export default function Contact({ dict, locale }: { dict: Dictionary; locale: string }) {
   return (
     <section id="contact" className="py-32 relative">
       <div className="gradient-line mb-32" />
@@ -12,7 +14,7 @@ export default function Contact({ dict, locale }: { dict: any; locale: string })
             {dict.contact.heading}
           </h2>
 
-          <p className="text-muted-light text-base sm:text-lg leading-relaxed mb-12">
+          <p className="text-muted-light text-base sm:text-lg leading-relaxed mb-12 whitespace-pre-line">
             {dict.contact.description}
           </p>
 

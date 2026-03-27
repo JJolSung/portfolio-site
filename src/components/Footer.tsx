@@ -1,4 +1,6 @@
-export default function Footer({ dict }: { dict: any }) {
+import type { Dictionary } from "@/i18n/types";
+
+export default function Footer({ dict }: { dict: Dictionary }) {
   return (
     <footer className="border-t border-white/5 py-12">
       <div className="max-w-6xl mx-auto px-6">
@@ -7,7 +9,7 @@ export default function Footer({ dict }: { dict: any }) {
             &ldquo;{dict.footer.tagline}&rdquo;
           </p>
           <p className="text-xs text-muted">
-            &copy; {new Date().getFullYear()} MyeongSub Kim / MOVA Tech. {dict.footer.rights}
+            &copy; {new Date().getFullYear()} MyeongSub Kim / MOVA Tech Co.,Ltd. {dict.footer.rights}
           </p>
         </div>
       </div>
