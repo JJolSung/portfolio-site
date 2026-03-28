@@ -22,7 +22,7 @@ export default function ShowcaseCTA({
             href={`/${locale}#contact`}
             className="group inline-flex items-center gap-2 px-8 py-3.5 bg-accent text-surface font-medium rounded-lg hover:bg-accent-dim transition-all hover:scale-[1.02] active:scale-[0.98]"
           >
-            {dict.contact.email}
+            {dict.showcase.labels.ctaButton}
             <svg
               className="w-4 h-4 group-hover:translate-x-1 transition-transform"
               fill="none"

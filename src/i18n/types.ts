@@ -85,6 +85,7 @@ export interface Dictionary {
       demo: string;
       github: string;
       cta: string;
+      ctaButton: string;
       ctaDescription: string;
     };
     items: Record<

@@ -2,7 +2,7 @@ import type { Dictionary } from "@/i18n/types";
 
 export default function ShowcaseHero({ dict }: { dict: Dictionary }) {
   return (
-    <section className="relative pt-32 pb-16 overflow-hidden">
+    <section className="relative pt-32 pb-16 overflow-x-clip">
       {/* Background effects */}
       <div className="absolute inset-0">
         <div className="absolute top-1/4 left-1/3 w-[500px] h-[500px] bg-accent/5 rounded-full blur-[120px]" />

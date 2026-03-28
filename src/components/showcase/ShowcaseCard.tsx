@@ -32,16 +32,16 @@ export default function ShowcaseCard({
     >
       {/* Glow effect on hover */}
       <div
-        className={`absolute -inset-[1px] rounded-2xl bg-gradient-to-br ${project.gradient} opacity-0 group-hover:opacity-100 blur-xl transition-opacity duration-700 -z-10`}
+        className={`card-glow absolute -inset-[1px] rounded-2xl bg-gradient-to-br ${project.gradient} opacity-0 [@media(hover:hover)]:group-hover:opacity-100 blur-xl transition-opacity duration-700 -z-10 will-change-[opacity,filter] [transform:translateZ(0)]`}
       />
 
       {/* Gradient border */}
       <div
-        className={`absolute -inset-[1px] rounded-2xl bg-gradient-to-br ${project.gradient} opacity-0 group-hover:opacity-100 transition-opacity duration-500`}
+        className={`card-glow absolute -inset-[1px] rounded-2xl bg-gradient-to-br ${project.gradient} opacity-0 [@media(hover:hover)]:group-hover:opacity-100 transition-opacity duration-500`}
       />
 
       {/* Card content */}
-      <div className="relative bg-surface-raised rounded-2xl p-8 border border-white/5 group-hover:border-transparent transition-colors duration-500">
+      <div className="card-body relative bg-surface-raised rounded-2xl p-8 border border-white/5 group-hover:border-transparent transition-colors duration-500">
         {/* Header: type badge + icon */}
         <div className="flex items-start justify-between mb-5">
           <span className="font-mono text-[10px] tracking-widest uppercase text-muted-light border border-white/10 px-2.5 py-1 rounded-md">
@@ -51,7 +51,7 @@ export default function ShowcaseCard({
         </div>
 
         {/* Title */}
-        <h3 className="font-display text-xl sm:text-2xl font-semibold text-white mb-3 group-hover:text-accent transition-colors duration-300">
+        <h3 className="card-title font-display text-xl sm:text-2xl font-semibold text-white mb-3 group-hover:text-accent transition-colors duration-300">
           {content.title}
         </h3>
 
