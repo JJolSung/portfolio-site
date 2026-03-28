@@ -125,7 +125,13 @@
         "title": "AI Customer Chatbot",
         "type": "AI Chatbot (RAG)",
         "description": "RAG-powered customer support chatbot with vector search for accurate, context-aware responses. Understands your docs, answers questions, and escalates when needed.",
-        "tags": ["Next.js", "Groq API", "RAG", "Supabase pgvector", "Tailwind CSS"]
+        "tags": [
+          "Next.js",
+          "Groq API",
+          "RAG",
+          "Supabase pgvector",
+          "Tailwind CSS"
+        ]
       },
       "landing-page-templates": {
         "title": "Landing Page Templates",

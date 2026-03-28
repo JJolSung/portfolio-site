@@ -47,7 +47,7 @@ export default function Navigation({ dict, locale }: NavigationProps) {
           }
         });
       },
-      { threshold: 0.3, rootMargin: '-80px 0px -40% 0px' }
+      { threshold: 0.3, rootMargin: '-80px 0px -40% 0px' },
     );
 
     sections.forEach((id) => {
@@ -60,10 +60,22 @@ export default function Navigation({ dict, locale }: NavigationProps) {
 
   const navLinks = [
     { href: `/${locale}#about`, label: dict.nav.about, section: 'about' },
-    { href: `/${locale}#projects`, label: dict.nav.projects, section: 'projects' },
-    { href: `/${locale}#services`, label: dict.nav.services, section: 'services' },
+    {
+      href: `/${locale}#projects`,
+      label: dict.nav.projects,
+      section: 'projects',
+    },
+    {
+      href: `/${locale}#services`,
+      label: dict.nav.services,
+      section: 'services',
+    },
     { href: `/${locale}#contact`, label: dict.nav.contact, section: 'contact' },
-    { href: `/${locale}#showcase`, label: dict.nav.showcase, section: 'showcase' },
+    {
+      href: `/${locale}#showcase`,
+      label: dict.nav.showcase,
+      section: 'showcase',
+    },
   ];
 
   return (
