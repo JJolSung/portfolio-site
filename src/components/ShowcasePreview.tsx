@@ -15,7 +15,7 @@ export default function ShowcasePreview({
     <section id="showcase" className="py-32 relative">
       <div className="gradient-line mb-32" />
       <div className="max-w-6xl mx-auto px-6">
-        <span className="reveal font-mono text-xs text-accent tracking-widest uppercase mb-4 block">
+        <span className="reveal font-mono text-base text-accent tracking-widest uppercase mb-4 block">
           {dict.showcasePreview.label}
         </span>
         <h2 className="reveal font-display text-3xl sm:text-4xl md:text-5xl font-bold text-white leading-tight mb-6 max-w-3xl">
@@ -42,7 +42,7 @@ export default function ShowcasePreview({
 
                 <div className="relative p-6 sm:p-8 text-center">
                   <span className="text-4xl block mb-4">{project.icon}</span>
-                  <h3 className="font-display text-sm sm:text-base font-semibold text-white group-hover:text-accent transition-colors">
+                  <h3 className="font-display text-base font-semibold text-white group-hover:text-accent transition-colors">
                     {content.title}
                   </h3>
                   <span className="font-mono text-[10px] text-muted-light mt-2 block">

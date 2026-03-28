@@ -14,7 +14,7 @@ export default function ShowcaseHero({ dict }: { dict: Dictionary }) {
         {/* Label */}
         <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-accent/20 bg-accent/5 mb-8 animate-fade-in">
           <span className="w-2 h-2 bg-accent rounded-full animate-pulse" />
-          <span className="text-xs text-accent font-mono tracking-wider uppercase">
+          <span className="text-base text-accent font-mono tracking-wider uppercase">
             {dict.showcase.hero.label}
           </span>
         </div>

@@ -12,7 +12,7 @@ export default function About({ dict }: { dict: Dictionary }) {
       <div className="gradient-line mb-32" />
       <div className="max-w-6xl mx-auto px-6">
         {/* Label */}
-        <span className="reveal font-mono text-xs text-accent tracking-widest uppercase mb-4 block">
+        <span className="reveal font-mono text-base text-accent tracking-widest uppercase mb-4 block">
           {dict.about.label}
         </span>
 
@@ -42,7 +42,7 @@ export default function About({ dict }: { dict: Dictionary }) {
                 <div className="font-display text-3xl font-bold text-accent mb-1">
                   {stat.value}
                 </div>
-                <div className="text-sm text-muted">{stat.label}</div>
+                <div className="text-base text-muted">{stat.label}</div>
               </div>
             ))}
           </div>

@@ -15,13 +15,13 @@ export default function Services({ dict, locale }: { dict: Dictionary; locale: s
     <section id="services" className="py-32 relative">
       <div className="gradient-line mb-32" />
       <div className="max-w-6xl mx-auto px-6">
-        <span className="reveal font-mono text-xs text-accent tracking-widest uppercase mb-4 block">
+        <span className="reveal font-mono text-base text-accent tracking-widest uppercase mb-4 block">
           {dict.services.label}
         </span>
         <h2 className="reveal font-display text-3xl sm:text-4xl md:text-5xl font-bold text-white leading-tight mb-6 max-w-3xl">
           {dict.services.heading}
         </h2>
-        <div className="reveal text-sm text-muted mb-16 max-w-2xl space-y-1">
+        <div className="reveal text-base text-muted mb-16 max-w-2xl space-y-1">
           <p>{dict.services.note}</p>
           <Link
             href={`/${locale}/showcase`}
@@ -47,7 +47,7 @@ export default function Services({ dict, locale }: { dict: Dictionary; locale: s
                   {/* Icon + Timeline */}
                   <div className="flex items-start justify-between mb-5">
                     <span className="text-3xl">{serviceIcons[key]}</span>
-                    <span className="font-mono text-xs text-accent bg-accent/10 px-3 py-1 rounded-full">
+                    <span className="font-mono text-base text-accent bg-accent/10 px-3 py-1 rounded-full">
                       {service.timeline}
                     </span>
                   </div>
@@ -58,7 +58,7 @@ export default function Services({ dict, locale }: { dict: Dictionary; locale: s
                   </h3>
 
                   {/* Description */}
-                  <p className="text-sm text-muted-light leading-relaxed">
+                  <p className="text-base text-muted-light leading-relaxed">
                     {service.description}
                   </p>
                 </div>

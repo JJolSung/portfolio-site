@@ -11,7 +11,7 @@ export default function ShowcaseGrid({ dict }: { dict: Dictionary }) {
           <svg className="w-4 h-4 text-accent shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
           </svg>
-          <p className="text-xs text-muted-light leading-relaxed">
+          <p className="text-base text-muted-light leading-relaxed">
             {dict.showcase.labels.note}
           </p>
         </div>

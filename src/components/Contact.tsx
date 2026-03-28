@@ -6,7 +6,7 @@ export default function Contact({ dict, locale }: { dict: Dictionary; locale: st
       <div className="gradient-line mb-32" />
       <div className="max-w-6xl mx-auto px-6">
         <div className="reveal max-w-3xl mx-auto text-center">
-          <span className="font-mono text-xs text-accent tracking-widest uppercase mb-4 block">
+          <span className="font-mono text-base text-accent tracking-widest uppercase mb-4 block">
             {dict.contact.label}
           </span>
 

@@ -13,7 +13,7 @@ export default function Hero({ dict, locale }: { dict: Dictionary; locale: strin
         {/* Status badge */}
         <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-accent/20 bg-accent/5 mb-8 animate-fade-in">
           <span className="w-2 h-2 bg-accent rounded-full animate-pulse" />
-          <span className="text-xs text-accent font-mono tracking-wider uppercase">
+          <span className="text-base text-accent font-mono tracking-wider uppercase">
             Available for work
           </span>
         </div>
@@ -78,7 +78,7 @@ export default function Hero({ dict, locale }: { dict: Dictionary; locale: strin
 
       {/* Scroll indicator */}
       <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 animate-fade-in" style={{ animationDelay: "1s" }}>
-        <span className="text-xs text-muted font-mono">{dict.hero.scroll}</span>
+        <span className="text-base text-muted font-mono">{dict.hero.scroll}</span>
         <div className="w-px h-8 bg-gradient-to-b from-muted to-transparent" />
       </div>
     </section>

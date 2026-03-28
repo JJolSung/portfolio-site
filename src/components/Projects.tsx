@@ -11,7 +11,7 @@ export default function Projects({ dict }: { dict: Dictionary }) {
     <section id='projects' className='py-32 relative'>
       <div className='gradient-line mb-32' />
       <div className='max-w-6xl mx-auto px-6'>
-        <span className='reveal font-mono text-xs text-accent tracking-widest uppercase mb-4 block'>
+        <span className='reveal font-mono text-base text-accent tracking-widest uppercase mb-4 block'>
           {dict.projects.label}
         </span>
         <h2 className='reveal font-display text-3xl sm:text-4xl md:text-5xl font-bold text-white leading-tight mb-16 max-w-3xl'>
@@ -36,7 +36,7 @@ export default function Projects({ dict }: { dict: Dictionary }) {
                         <h3 className='font-display text-xl sm:text-2xl font-semibold text-white group-hover:text-accent transition-colors'>
                           {data.title}
                         </h3>
-                        <p className='text-sm text-muted'>{data.subtitle}</p>
+                        <p className='text-base text-muted'>{data.subtitle}</p>
                       </div>
                     </div>
 
@@ -49,7 +49,7 @@ export default function Projects({ dict }: { dict: Dictionary }) {
                       {data.tags.map((tag: string) => (
                         <span
                           key={tag}
-                          className='text-xs font-mono px-3 py-1 rounded-full border border-white/10 text-muted-light bg-surface'
+                          className='text-base font-mono px-3 py-1 rounded-full border border-white/10 text-muted-light bg-surface'
                         >
                           {tag}
                         </span>
@@ -63,7 +63,7 @@ export default function Projects({ dict }: { dict: Dictionary }) {
                       href={data.link}
                       target='_blank'
                       rel='noopener noreferrer'
-                      className='shrink-0 inline-flex items-center gap-2 text-sm text-accent hover:text-accent-dim transition-colors mt-2 lg:mt-0'
+                      className='shrink-0 inline-flex items-center gap-2 text-base text-accent hover:text-accent-dim transition-colors mt-2 lg:mt-0'
                     >
                       <span className='font-mono'>Visit</span>
                       <svg

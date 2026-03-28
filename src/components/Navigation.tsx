@@ -105,7 +105,7 @@ export default function Navigation({ dict, locale }: NavigationProps) {
               <button
                 key={loc}
                 onClick={() => switchLocale(loc)}
-                className={`text-xs px-2 py-1 rounded transition-all ${
+                className={`text-base px-2 py-1 rounded transition-all ${
                   locale === loc
                     ? 'bg-accent/20 text-accent font-medium'
                     : 'text-muted hover:text-white'
@@ -167,7 +167,7 @@ export default function Navigation({ dict, locale }: NavigationProps) {
                     switchLocale(loc);
                     setMenuOpen(false);
                   }}
-                  className={`text-sm px-3 py-1.5 rounded transition-all ${
+                  className={`text-base px-3 py-1.5 rounded transition-all ${
                     locale === loc
                       ? 'bg-accent/20 text-accent font-medium'
                       : 'text-muted hover:text-white'
