@@ -20,8 +20,8 @@ export const showcaseProjects: ShowcaseProject[] = [
   },
   {
     key: "landing-page-templates",
-    githubUrl: "https://github.com/JJolSung/landing-page-templates",
-    demoUrl: "https://landing-page-templates-demo.vercel.app",
+    githubUrl: "https://github.com/JJolSung/landing-page-templates?tab=readme-ov-file",
+    demoUrl: "https://landing-page-templates-three.vercel.app/",
     priceRange: "$200 ~ $2,000",
     buildTime: "1 day",
     icon: "🚀",
