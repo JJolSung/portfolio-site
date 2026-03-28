@@ -39,19 +39,16 @@ body {
   transform: translateY(0);
 }
 
-/* Mobile: activate card effects when scrolled into view */
+/* Mobile: activate card effects for centered card only */
 @media (hover: none) {
-  .reveal.visible > .card-glow {
+  .card-centered > .card-glow {
     opacity: 1;
-    transition-delay: 0.4s;
   }
-  .reveal.visible > .card-body {
+  .card-centered > .card-body {
     border-color: transparent;
-    transition-delay: 0.4s;
   }
-  .reveal.visible .card-title {
+  .card-centered .card-title {
     color: #c8f542;
-    transition-delay: 0.4s;
   }
 }
 

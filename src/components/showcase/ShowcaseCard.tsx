@@ -1,5 +1,6 @@
 "use client";
 
+import { useRef, useEffect } from "react";
 import type { ShowcaseProject } from "@/data/showcase-projects";
 
 interface ShowcaseCardProps {
@@ -25,8 +26,28 @@ export default function ShowcaseCard({
   labels,
   index,
 }: ShowcaseCardProps) {
+  const cardRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const isTouchDevice = window.matchMedia("(hover: none)").matches;
+    if (!isTouchDevice || !cardRef.current) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          entry.target.classList.toggle("card-centered", entry.isIntersecting);
+        });
+      },
+      { threshold: 0.6, rootMargin: "-20% 0px -20% 0px" }
+    );
+
+    observer.observe(cardRef.current);
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <div
+      ref={cardRef}
       className="reveal group relative"
       style={{ transitionDelay: `${index * 0.1}s` }}
     >
