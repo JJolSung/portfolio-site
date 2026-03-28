@@ -1,3 +1,4 @@
+import Link from "next/link";
 import type { Dictionary } from "@/i18n/types";
 
 export default function Contact({ dict, locale }: { dict: Dictionary; locale: string }) {
@@ -79,6 +80,29 @@ export default function Contact({ dict, locale }: { dict: Dictionary; locale: st
                 />
               </svg>
             </a>
+          </div>
+
+          {/* Showcase CTA */}
+          <div className="mt-16 pt-8 border-t border-white/5">
+            <Link
+              href={`/${locale}/showcase`}
+              className="group inline-flex items-center gap-2 px-6 py-3 border border-accent/20 text-accent text-sm font-medium rounded-lg hover:bg-accent/10 transition-all hover:scale-[1.02] active:scale-[0.98]"
+            >
+              {dict.nav.showcase}
+              <svg
+                className="w-4 h-4 group-hover:translate-x-1 transition-transform"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M17 8l4 4m0 0l-4 4m4-4H3"
+                />
+              </svg>
+            </Link>
           </div>
         </div>
       </div>
