@@ -8,8 +8,8 @@ export default function ShowcaseCTA({
   locale: string;
 }) {
   return (
-    <section className="py-32 relative">
-      <div className="gradient-line mb-32" />
+    <section className="py-16 md:py-32 relative">
+      <div className="gradient-line mb-16 md:mb-32" />
       <div className="max-w-6xl mx-auto px-6">
         <div className="reveal max-w-3xl mx-auto text-center">
           <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold text-white leading-tight mb-6">

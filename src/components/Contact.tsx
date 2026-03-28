@@ -2,8 +2,8 @@ import type { Dictionary } from "@/i18n/types";
 
 export default function Contact({ dict, locale }: { dict: Dictionary; locale: string }) {
   return (
-    <section id="contact" className="py-32 relative">
-      <div className="gradient-line mb-32" />
+    <section id="contact" className="py-16 md:py-32 relative">
+      <div className="gradient-line mb-16 md:mb-32" />
       <div className="max-w-6xl mx-auto px-6">
         <div className="reveal max-w-3xl mx-auto text-center">
           <span className="font-mono text-base text-accent tracking-widest uppercase mb-4 block">

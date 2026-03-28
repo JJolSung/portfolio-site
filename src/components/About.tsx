@@ -8,8 +8,8 @@ export default function About({ dict }: { dict: Dictionary }) {
   ];
 
   return (
-    <section id="about" className="py-32 relative">
-      <div className="gradient-line mb-32" />
+    <section id="about" className="py-16 md:py-32 relative">
+      <div className="gradient-line mb-16 md:mb-32" />
       <div className="max-w-6xl mx-auto px-6">
         {/* Label */}
         <span className="reveal font-mono text-base text-accent tracking-widest uppercase mb-4 block">

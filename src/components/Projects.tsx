@@ -8,8 +8,8 @@ export default function Projects({ dict }: { dict: Dictionary }) {
   ];
 
   return (
-    <section id='projects' className='py-32 relative'>
-      <div className='gradient-line mb-32' />
+    <section id='projects' className='py-16 md:py-32 relative'>
+      <div className='gradient-line mb-16 md:mb-32' />
       <div className='max-w-6xl mx-auto px-6'>
         <span className='reveal font-mono text-base text-accent tracking-widest uppercase mb-4 block'>
           {dict.projects.label}
