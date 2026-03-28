@@ -3,7 +3,8 @@
 @tailwind utilities;
 
 :root {
-  --font-body: var(--font-display), var(--font-noto-jp), var(--font-noto-kr), sans-serif;
+  --font-body:
+    var(--font-display), var(--font-noto-jp), var(--font-noto-kr), sans-serif;
 }
 
 * {
@@ -31,7 +32,9 @@ body {
 .reveal {
   opacity: 0;
   transform: translateY(24px);
-  transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+  transition:
+    opacity 0.7s ease-out,
+    transform 0.7s ease-out;
 }
 
 .reveal.visible {
@@ -40,7 +43,7 @@ body {
 }
 
 /* Mobile: activate card effects for centered card only */
-@media (hover: none) {
+@media (pointer: coarse) {
   .card-centered > .card-glow {
     opacity: 1;
   }
@@ -54,7 +57,7 @@ body {
 
 /* Noise texture overlay */
 .noise::before {
-  content: "";
+  content: '';
   position: fixed;
   inset: 0;
   z-index: 50;

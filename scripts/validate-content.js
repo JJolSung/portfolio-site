@@ -73,7 +73,7 @@ const ALLOWED_TECH_ITEMS = new Set([
   // Frontend
   "Next.js", "React", "Flutter", "TypeScript", "Tailwind CSS", "Dart",
   // Backend
-  "Node.js", "Python", "Deno", "Hono", "PostgreSQL", "Prisma",
+  "Node.js", "Python", "Deno", "Hono", "PostgreSQL", "Prisma", "Drizzle",
   // Cloud & Infra
   "Supabase", "Firebase", "Cloudflare", "AWS", "Vercel", "LangChain",
   // Tools

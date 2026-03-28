@@ -5,7 +5,7 @@ const techCategories = [
   },
   {
     label: "Backend",
-    items: ["Node.js", "Python", "Deno", "Hono", "PostgreSQL", "Prisma"],
+    items: ["Node.js", "Python", "Deno", "Hono", "PostgreSQL", "Prisma", "Drizzle"],
   },
   {
     label: "Cloud & Infra",

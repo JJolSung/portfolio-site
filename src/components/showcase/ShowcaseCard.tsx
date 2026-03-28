@@ -29,7 +29,7 @@ export default function ShowcaseCard({
   const cardRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const isTouchDevice = window.matchMedia("(hover: none)").matches;
+    const isTouchDevice = window.matchMedia("(pointer: coarse)").matches;
     if (!isTouchDevice || !cardRef.current) return;
 
     const observer = new IntersectionObserver(
@@ -53,12 +53,12 @@ export default function ShowcaseCard({
     >
       {/* Glow effect on hover */}
       <div
-        className={`card-glow absolute -inset-[1px] rounded-2xl bg-gradient-to-br ${project.gradient} opacity-0 [@media(hover:hover)]:group-hover:opacity-100 blur-xl transition-opacity duration-700 -z-10 will-change-[opacity,filter] [transform:translateZ(0)]`}
+        className={`card-glow absolute -inset-[1px] rounded-2xl bg-gradient-to-br ${project.gradient} opacity-0 [@media(pointer:fine)]:group-hover:opacity-100 blur-xl transition-opacity duration-700 -z-10 will-change-[opacity,filter] [transform:translateZ(0)]`}
       />
 
       {/* Gradient border */}
       <div
-        className={`card-glow absolute -inset-[1px] rounded-2xl bg-gradient-to-br ${project.gradient} opacity-0 [@media(hover:hover)]:group-hover:opacity-100 transition-opacity duration-500`}
+        className={`card-glow absolute -inset-[1px] rounded-2xl bg-gradient-to-br ${project.gradient} opacity-0 [@media(pointer:fine)]:group-hover:opacity-100 transition-opacity duration-500`}
       />
 
       {/* Card content */}
