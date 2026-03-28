@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { useRouter } from 'next/navigation';
+import { useRouter, usePathname } from 'next/navigation';
 import { Locale, locales } from '@/i18n/config';
 import type { Dictionary } from '@/i18n/types';
 
@@ -19,13 +19,17 @@ const localeLabels: Record<Locale, string> = {
 
 export default function Navigation({ dict, locale }: NavigationProps) {
   const router = useRouter();
+  const pathname = usePathname();
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState<string>('');
+
+  const isShowcasePage = pathname.includes('/showcase');
 
   const switchLocale = (loc: Locale) => {
-    const pathname = window.location.pathname;
+    const currentPath = window.location.pathname;
     const hash = window.location.hash;
-    const newPath = pathname.replace(/^\/(en|ja|ko)/, `/${loc}`);
+    const newPath = currentPath.replace(/^\/(en|ja|ko)/, `/${loc}`);
     router.push(`${newPath}${hash}`);
   };
 
@@ -35,11 +39,34 @@ export default function Navigation({ dict, locale }: NavigationProps) {
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
+  useEffect(() => {
+    if (isShowcasePage) return;
+
+    const sections = ['about', 'projects', 'services', 'contact'];
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setActiveSection(entry.target.id);
+          }
+        });
+      },
+      { threshold: 0.3, rootMargin: '-80px 0px -40% 0px' }
+    );
+
+    sections.forEach((id) => {
+      const el = document.getElementById(id);
+      if (el) observer.observe(el);
+    });
+
+    return () => observer.disconnect();
+  }, [pathname, isShowcasePage]);
+
   const navLinks = [
-    { href: `/${locale}#about`, label: dict.nav.about },
-    { href: `/${locale}#projects`, label: dict.nav.projects },
-    { href: `/${locale}#services`, label: dict.nav.services },
-    { href: `/${locale}#contact`, label: dict.nav.contact },
+    { href: `/${locale}#about`, label: dict.nav.about, section: 'about' },
+    { href: `/${locale}#projects`, label: dict.nav.projects, section: 'projects' },
+    { href: `/${locale}#services`, label: dict.nav.services, section: 'services' },
+    { href: `/${locale}#contact`, label: dict.nav.contact, section: 'contact' },
   ];
 
   return (
@@ -65,7 +92,11 @@ export default function Navigation({ dict, locale }: NavigationProps) {
             <a
               key={link.href}
               href={link.href}
-              className='text-2xl text-muted-light hover:text-white transition-colors'
+              className={`text-2xl transition-colors ${
+                !isShowcasePage && activeSection === link.section
+                  ? 'text-accent'
+                  : 'text-muted-light hover:text-white'
+              }`}
             >
               {link.label}
             </a>
@@ -74,7 +105,11 @@ export default function Navigation({ dict, locale }: NavigationProps) {
           {/* Showcase Page Link */}
           <Link
             href={`/${locale}/showcase`}
-            className='text-2xl text-muted-light hover:text-white transition-colors'
+            className={`text-2xl transition-colors ${
+              isShowcasePage
+                ? 'text-accent'
+                : 'text-muted-light hover:text-white'
+            }`}
           >
             {dict.nav.showcase}
           </Link>
@@ -130,7 +165,11 @@ export default function Navigation({ dict, locale }: NavigationProps) {
                 key={link.href}
                 href={link.href}
                 onClick={() => setMenuOpen(false)}
-                className='text-muted-light hover:text-white transition-colors py-1'
+                className={`transition-colors py-1 ${
+                  !isShowcasePage && activeSection === link.section
+                    ? 'text-accent'
+                    : 'text-muted-light hover:text-white'
+                }`}
               >
                 {link.label}
               </a>
@@ -138,7 +177,11 @@ export default function Navigation({ dict, locale }: NavigationProps) {
             <Link
               href={`/${locale}/showcase`}
               onClick={() => setMenuOpen(false)}
-              className='text-muted-light hover:text-white transition-colors py-1'
+              className={`transition-colors py-1 ${
+                isShowcasePage
+                  ? 'text-accent'
+                  : 'text-muted-light hover:text-white'
+              }`}
             >
               {dict.nav.showcase}
             </Link>
