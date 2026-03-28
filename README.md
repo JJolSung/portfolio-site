@@ -7,9 +7,14 @@ Built with **Next.js 14**, **TypeScript**, and **Tailwind CSS**.
 ## Features
 
 - **Multilingual** — Korean, Japanese, English (i18n via JSON dictionaries)
-- **Responsive** — Mobile-first design with hamburger menu
-- **Dark theme** — Custom design system with accent colors
+- **Responsive** — Mobile-first design with hamburger menu, optimized section spacing
+- **Dark theme** — Custom design system with accent colors and gradient effects
 - **Scroll animations** — IntersectionObserver-based reveal effects
+- **Active navigation** — Scroll position-based nav highlighting per section
+- **Showcase** — MVP project gallery with gradient glow cards, live demo & GitHub links
+  - Desktop: hover-triggered glow effect
+  - Mobile: centered-card-only glow with IntersectionObserver
+  - iOS Safari compositing layer fix for smooth blur transitions
 - **Optimized fonts** — Self-hosted via `next/font/google` (Outfit, JetBrains Mono, Noto Sans JP/KR)
 - **Content protection** — Pre-commit hook + CI pipeline to block inappropriate content
 
@@ -55,7 +60,9 @@ src/
 │       ├── layout.tsx          # Locale layout (fonts, nav, footer)
 │       ├── page.tsx            # Home page (composes all sections)
 │       ├── not-found.tsx       # Locale 404 page
-│       └── error.tsx           # Error boundary
+│       ├── error.tsx           # Error boundary
+│       └── showcase/
+│           └── page.tsx        # Showcase page (MVP project gallery)
 ├── components/
 │   ├── Hero.tsx                # Hero section
 │   ├── About.tsx               # About section
@@ -63,9 +70,17 @@ src/
 │   ├── Projects.tsx            # Projects section
 │   ├── Services.tsx            # Services section
 │   ├── Contact.tsx             # Contact section
-│   ├── Navigation.tsx          # Header navigation (client)
+│   ├── ShowcasePreview.tsx     # Showcase preview on main page
+│   ├── Navigation.tsx          # Header navigation with active section (client)
 │   ├── Footer.tsx              # Footer
-│   └── ScrollReveal.tsx        # Scroll animation observer (client)
+│   ├── ScrollReveal.tsx        # Scroll animation observer (client)
+│   └── showcase/
+│       ├── ShowcaseCard.tsx    # Project card with glow effects (client)
+│       ├── ShowcaseGrid.tsx    # Card grid layout
+│       ├── ShowcaseHero.tsx    # Showcase page hero
+│       └── ShowcaseCTA.tsx     # Showcase page CTA
+├── data/
+│   └── showcase-projects.ts   # Showcase project data (URLs, prices, gradients)
 ├── i18n/
 │   ├── config.ts               # Locale config & dictionary loader
 │   ├── types.ts                # Dictionary TypeScript type
