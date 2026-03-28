@@ -10,19 +10,21 @@ import ShowcasePreview from '@/components/ShowcasePreview';
 export default async function HomePage({
   params,
 }: {
-  params: { locale: Locale };
+  params: Promise<{ locale: string }>;
 }) {
-  const dict = await getDictionary(params.locale);
+  const { locale: rawLocale } = await params;
+  const locale = rawLocale as Locale;
+  const dict = await getDictionary(locale);
 
   return (
     <>
-      <Hero dict={dict} locale={params.locale} />
+      <Hero dict={dict} locale={locale} />
       <About dict={dict} />
       <TechStack dict={dict} />
       <Projects dict={dict} />
-      <Services dict={dict} locale={params.locale} />
-      <Contact dict={dict} locale={params.locale} />
-      <ShowcasePreview dict={dict} locale={params.locale} />
+      <Services dict={dict} locale={locale} />
+      <Contact dict={dict} locale={locale} />
+      <ShowcasePreview dict={dict} locale={locale} />
     </>
   );
 }

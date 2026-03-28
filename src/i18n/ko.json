@@ -125,7 +125,13 @@
         "title": "AI 고객 챗봇",
         "type": "AI 챗봇 (RAG)",
         "description": "벡터 검색 기반 RAG 고객 지원 챗봇. 문서를 이해하고, 정확한 맥락의 답변을 제공하며, 필요시 에스컬레이션합니다.",
-        "tags": ["Next.js", "Groq API", "RAG", "Supabase pgvector", "Tailwind CSS"]
+        "tags": [
+          "Next.js",
+          "Groq API",
+          "RAG",
+          "Supabase pgvector",
+          "Tailwind CSS"
+        ]
       },
       "landing-page-templates": {
         "title": "랜딩페이지 템플릿",

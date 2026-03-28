@@ -1,6 +1,11 @@
 import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
-import { Outfit, JetBrains_Mono, Noto_Sans_JP, Noto_Sans_KR } from 'next/font/google';
+import {
+  Outfit,
+  JetBrains_Mono,
+  Noto_Sans_JP,
+  Noto_Sans_KR,
+} from 'next/font/google';
 import { locales, Locale } from '@/i18n/config';
 import { getDictionary } from '@/i18n/config';
 import Navigation from '@/components/Navigation';
@@ -42,8 +47,11 @@ export async function generateStaticParams() {
 export async function generateMetadata({
   params,
 }: {
-  params: { locale: Locale };
+  params: Promise<{ locale: string }>;
 }): Promise<Metadata> {
+  const { locale: rawLocale } = await params;
+  const locale = rawLocale as Locale;
+
   const titles: Record<Locale, string> = {
     en: 'MyeongSub Kim — Full-Stack AI Developer',
     ja: 'キム・ミョンソプ — フルスタック AI デベロッパー',
@@ -57,11 +65,11 @@ export async function generateMetadata({
   };
 
   return {
-    title: titles[params.locale],
-    description: descriptions[params.locale],
+    title: titles[locale],
+    description: descriptions[locale],
     openGraph: {
-      title: titles[params.locale],
-      description: descriptions[params.locale],
+      title: titles[locale],
+      description: descriptions[locale],
       type: 'website',
     },
   };
@@ -72,19 +80,26 @@ export default async function LocaleLayout({
   params,
 }: {
   children: React.ReactNode;
-  params: { locale: Locale };
+  params: Promise<{ locale: string }>;
 }) {
-  if (!locales.includes(params.locale as Locale)) {
+  const { locale: rawLocale } = await params;
+  const locale = rawLocale as Locale;
+
+  if (!locales.includes(locale)) {
     notFound();
   }
 
-  const dict = await getDictionary(params.locale);
+  const dict = await getDictionary(locale);
   const langMap: Record<Locale, string> = { en: 'en', ja: 'ja', ko: 'ko' };
 
   return (
-    <html lang={langMap[params.locale]} className={`${outfit.variable} ${jetbrainsMono.variable} ${notoSansJP.variable} ${notoSansKR.variable}`}>
+    <html
+      lang={langMap[locale]}
+      data-scroll-behavior='smooth'
+      className={`${outfit.variable} ${jetbrainsMono.variable} ${notoSansJP.variable} ${notoSansKR.variable}`}
+    >
       <body className='noise'>
-        <Navigation dict={dict} locale={params.locale} />
+        <Navigation dict={dict} locale={locale} />
         <main>{children}</main>
         <Footer dict={dict} />
         <ScrollReveal />

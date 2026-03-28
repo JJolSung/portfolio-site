@@ -21,9 +21,21 @@ export default function ScrollReveal() {
       }
     );
 
-    document.querySelectorAll(".reveal").forEach((el) => observer.observe(el));
+    function observeAll() {
+      document.querySelectorAll(".reveal:not(.visible)").forEach((el) => observer.observe(el));
+    }
 
-    return () => observer.disconnect();
+    // Observe existing elements after paint
+    requestAnimationFrame(observeAll);
+
+    // Watch for late-hydrated elements
+    const mo = new MutationObserver(observeAll);
+    mo.observe(document.body, { childList: true, subtree: true });
+
+    return () => {
+      observer.disconnect();
+      mo.disconnect();
+    };
   }, [pathname]);
 
   return null;
