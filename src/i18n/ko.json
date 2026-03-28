@@ -90,6 +90,12 @@
     "email": "문의하기",
     "portfolio": "MOVA Tech 보기"
   },
+  "showcasePreview": {
+    "label": "쇼케이스",
+    "heading": "바로 사용 가능한 MVP를 만나보세요",
+    "description": "AI 챗봇부터 SaaS 대시보드까지, 맞춤 수정 후 바로 배포할 수 있는 프로젝트들입니다.",
+    "cta": "전체 프로젝트 보기"
+  },
   "footer": {
     "tagline": "Momentum of Value — 가치를 움직이는 기술을 만듭니다.",
     "rights": "All rights reserved."

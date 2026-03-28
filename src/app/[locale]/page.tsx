@@ -5,6 +5,7 @@ import TechStack from '@/components/TechStack';
 import Projects from '@/components/Projects';
 import Services from '@/components/Services';
 import Contact from '@/components/Contact';
+import ShowcasePreview from '@/components/ShowcasePreview';
 
 export default async function HomePage({
   params,
@@ -21,6 +22,7 @@ export default async function HomePage({
       <Projects dict={dict} />
       <Services dict={dict} locale={params.locale} />
       <Contact dict={dict} locale={params.locale} />
+      <ShowcasePreview dict={dict} locale={params.locale} />
     </>
   );
 }

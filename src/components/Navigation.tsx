@@ -24,8 +24,6 @@ export default function Navigation({ dict, locale }: NavigationProps) {
   const [menuOpen, setMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState<string>('');
 
-  const isShowcasePage = pathname.includes('/showcase');
-
   const switchLocale = (loc: Locale) => {
     const currentPath = window.location.pathname;
     const hash = window.location.hash;
@@ -40,9 +38,7 @@ export default function Navigation({ dict, locale }: NavigationProps) {
   }, []);
 
   useEffect(() => {
-    if (isShowcasePage) return;
-
-    const sections = ['about', 'projects', 'services', 'contact'];
+    const sections = ['about', 'projects', 'services', 'contact', 'showcase'];
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -60,13 +56,14 @@ export default function Navigation({ dict, locale }: NavigationProps) {
     });
 
     return () => observer.disconnect();
-  }, [pathname, isShowcasePage]);
+  }, [pathname]);
 
   const navLinks = [
     { href: `/${locale}#about`, label: dict.nav.about, section: 'about' },
     { href: `/${locale}#projects`, label: dict.nav.projects, section: 'projects' },
     { href: `/${locale}#services`, label: dict.nav.services, section: 'services' },
     { href: `/${locale}#contact`, label: dict.nav.contact, section: 'contact' },
+    { href: `/${locale}#showcase`, label: dict.nav.showcase, section: 'showcase' },
   ];
 
   return (
@@ -93,7 +90,7 @@ export default function Navigation({ dict, locale }: NavigationProps) {
               key={link.href}
               href={link.href}
               className={`text-2xl transition-colors ${
-                !isShowcasePage && activeSection === link.section
+                activeSection === link.section
                   ? 'text-accent'
                   : 'text-muted-light hover:text-white'
               }`}
@@ -101,18 +98,6 @@ export default function Navigation({ dict, locale }: NavigationProps) {
               {link.label}
             </a>
           ))}
-
-          {/* Showcase Page Link */}
-          <Link
-            href={`/${locale}/showcase`}
-            className={`text-2xl transition-colors ${
-              isShowcasePage
-                ? 'text-accent'
-                : 'text-muted-light hover:text-white'
-            }`}
-          >
-            {dict.nav.showcase}
-          </Link>
 
           {/* Language Switcher */}
           <div className='flex items-center gap-1 ml-4 border-l border-white/10 pl-4'>
@@ -166,7 +151,7 @@ export default function Navigation({ dict, locale }: NavigationProps) {
                 href={link.href}
                 onClick={() => setMenuOpen(false)}
                 className={`transition-colors py-1 ${
-                  !isShowcasePage && activeSection === link.section
+                  activeSection === link.section
                     ? 'text-accent'
                     : 'text-muted-light hover:text-white'
                 }`}
@@ -174,17 +159,6 @@ export default function Navigation({ dict, locale }: NavigationProps) {
                 {link.label}
               </a>
             ))}
-            <Link
-              href={`/${locale}/showcase`}
-              onClick={() => setMenuOpen(false)}
-              className={`transition-colors py-1 ${
-                isShowcasePage
-                  ? 'text-accent'
-                  : 'text-muted-light hover:text-white'
-              }`}
-            >
-              {dict.nav.showcase}
-            </Link>
             <div className='flex items-center gap-2 pt-4 border-t border-white/10'>
               {locales.map((loc) => (
                 <button

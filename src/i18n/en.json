@@ -90,6 +90,12 @@
     "email": "Get in touch",
     "portfolio": "View MOVA Tech"
   },
+  "showcasePreview": {
+    "label": "Showcase",
+    "heading": "Explore Production-Ready MVPs",
+    "description": "Pre-built solutions you can customize and deploy. From AI chatbots to SaaS dashboards.",
+    "cta": "View All Projects"
+  },
   "footer": {
     "tagline": "Momentum of Value — Building technology that moves value forward.",
     "rights": "All rights reserved."

@@ -64,6 +64,12 @@ export interface Dictionary {
     email: string;
     portfolio: string;
   };
+  showcasePreview: {
+    label: string;
+    heading: string;
+    description: string;
+    cta: string;
+  };
   footer: {
     tagline: string;
     rights: string;

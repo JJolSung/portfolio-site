@@ -90,6 +90,12 @@
     "email": "お問い合わせ",
     "portfolio": "MOVA Tech を見る"
   },
+  "showcasePreview": {
+    "label": "ショーケース",
+    "heading": "すぐ使えるMVPをご覧ください",
+    "description": "AIチャットボットからSaaSダッシュボードまで、カスタマイズしてすぐにデプロイできるプロジェクトです。",
+    "cta": "すべてのプロジェクトを見る"
+  },
   "footer": {
     "tagline": "Momentum of Value — 価値を動かす技術を作ります。",
     "rights": "All rights reserved."
